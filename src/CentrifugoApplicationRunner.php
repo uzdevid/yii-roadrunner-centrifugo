@@ -120,7 +120,7 @@ class CentrifugoApplicationRunner extends ApplicationRunner {
         }
 
         try {
-            $this->runWorker($container, $actualErrorHandler);
+            $this->runCentrifugo($container, $actualErrorHandler);
         } catch (Throwable $e) {
             $actualErrorHandler->handle($e);
             return;
@@ -157,7 +157,7 @@ class CentrifugoApplicationRunner extends ApplicationRunner {
      * @throws NotFoundExceptionInterface
      * @throws JsonException
      */
-    private function runWorker(ContainerInterface $container, ErrorHandler $errorHandler): void {
+    private function runCentrifugo(ContainerInterface $container, ErrorHandler $errorHandler): void {
         /** @var Application $application */
         $application = $container->get(Application::class);
 

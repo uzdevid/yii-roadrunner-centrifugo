@@ -6,7 +6,7 @@ use RoadRunner\Centrifugo\Payload\SubscribeResponse;
 use RoadRunner\Centrifugo\Request\RequestInterface;
 use UzDevid\Yii\Runner\Centrifugo\Handler\SubscribeHandlerInterface;
 
-class SubscribeService implements SubscribeHandlerInterface {
+class SubscribeHandler implements SubscribeHandlerInterface {
     public function handle(RequestInterface $request): void {
         $request->respond(new SubscribeResponse(['ok' => true]));
     }

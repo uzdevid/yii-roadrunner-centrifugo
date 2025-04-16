@@ -6,7 +6,7 @@ use RoadRunner\Centrifugo\Payload\ConnectResponse;
 use RoadRunner\Centrifugo\Request\RequestInterface;
 use UzDevid\Yii\Runner\Centrifugo\Handler\ConnectHandlerInterface;
 
-class ConnectService implements ConnectHandlerInterface {
+class ConnectHandler implements ConnectHandlerInterface {
     public function handle(RequestInterface $request): void {
         $request->respond(new ConnectResponse('diko', null, ['ok' => true]));
     }
