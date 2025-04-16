@@ -1,15 +1,15 @@
 <?php
 
-namespace Yiisoft\Runner\RoadRunner\Centrifugo;
+namespace UzDevid\Yii\Runner\Centrifugo\Handler;
 
 use RoadRunner\Centrifugo\Request\RequestInterface;
-use Throwable;
+use UzDevid\Yii\Runner\Centrifugo\Exception\MessageExceptionInterface;
 
-interface ServiceInterface {
+interface HandlerInterface {
     /**
      * @param RequestInterface $request
      * @return void
-     * @throws Throwable
+     * @throws MessageExceptionInterface
      */
     public function handle(RequestInterface $request): void;
 }

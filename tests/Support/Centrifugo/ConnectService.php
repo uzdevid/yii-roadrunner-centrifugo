@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Yiisoft\Runner\RoadRunner\Centrifugo\Tests\Support\Centrifugo;
+namespace UzDevid\Yii\Runner\Centrifugo\Tests\Support\Centrifugo;
 
 use RoadRunner\Centrifugo\Payload\ConnectResponse;
 use RoadRunner\Centrifugo\Request\RequestInterface;
-use Yiisoft\Runner\RoadRunner\Centrifugo\ServiceInterface;
+use UzDevid\Yii\Runner\Centrifugo\Handler\ConnectHandlerInterface;
 
-class ConnectService implements ServiceInterface {
+class ConnectService implements ConnectHandlerInterface {
     public function handle(RequestInterface $request): void {
         $request->respond(new ConnectResponse('diko', null, ['ok' => true]));
     }

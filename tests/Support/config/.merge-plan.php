@@ -12,17 +12,17 @@ return [
         ],
         'params-centrifugo' => [
             '/' => [
-                'params.php',
+                '$params',
             ],
         ],
         'di-centrifugo' => [
             '/' => [
-                'di-centrifugo.php'
+                'centrifugo/di/*.php'
             ],
         ],
-        'events-centrifugo' => [
+        'events' => [
             '/' => [
-                'events-centrifugo.php',
+                'events.php',
             ],
         ],
         'events-fail' => [
@@ -32,17 +32,17 @@ return [
         ],
         'di-providers-centrifugo' => [
             '/' => [
-                'di-providers-centrifugo.php',
+                'di-providers.php',
             ],
         ],
         'di-delegates-centrifugo' => [
             '/' => [
-                'di-delegates-centrifugo.php',
+                'di-delegates.php',
             ],
         ],
         'bootstrap-centrifugo' => [
             '/' => [
-                'bootstrap-centrifugo.php',
+                'bootstrap.php',
             ],
         ],
     ],

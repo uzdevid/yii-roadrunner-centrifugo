@@ -1,18 +1,30 @@
 <?php declare(strict_types=1);
 
-use Yiisoft\Runner\RoadRunner\Centrifugo\RoadRunnerCentrifugoApplicationRunner;
+use RoadRunner\Centrifugo\Request\RequestFactory;
+use Spiral\RoadRunner\Worker;
+use UzDevid\Yii\Runner\Centrifugo\CentrifugoApplicationRunner;
+use Yiisoft\ErrorHandler\ErrorHandler;
+use Yiisoft\ErrorHandler\Renderer\PlainTextRenderer;
+use Yiisoft\Log\Logger;
+use Yiisoft\Log\Target\File\FileTarget;
 
 ini_set('display_errors', 'stderr');
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-$application = new RoadRunnerCentrifugoApplicationRunner(
-    rootPath: __DIR__ . '/Support',
+$rootPath = __DIR__ . '/Support';
+
+$logger = new Logger([new FileTarget(sprintf('%s/runtime/logs/centrifugo.log', $rootPath))]);
+$errorHandler = new ErrorHandler($logger, new PlainTextRenderer());
+
+$worker = Worker::create(logger: $logger);
+
+$application = new CentrifugoApplicationRunner(
+    rootPath: $rootPath,
+    temporaryErrorHandler: $errorHandler,
+    worker: $worker,
+    requestFactory: new RequestFactory($worker),
     debug: true
 );
 
-try {
-    $application->run();
-} catch (Throwable $e) {
-    file_put_contents(__DIR__ . '/err.txt', $e->getMessage());
-}
+$application->run();

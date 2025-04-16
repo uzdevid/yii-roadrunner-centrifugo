@@ -8,9 +8,9 @@ use Yiisoft\ErrorHandler\ErrorHandler;
 use Yiisoft\ErrorHandler\Middleware\ErrorCatcher;
 use Yiisoft\ErrorHandler\Renderer\PlainTextRenderer;
 use Yiisoft\ErrorHandler\ThrowableRendererInterface;
-use Yiisoft\Runner\RoadRunner\Centrifugo\Application;
-use Yiisoft\Runner\RoadRunner\Centrifugo\Tests\Support\Centrifugo\ConnectService;
-use Yiisoft\Runner\RoadRunner\Centrifugo\Tests\Support\Centrifugo\SubscribeService;
+use UzDevid\Yii\Runner\RoadRunner\Centrifugo\Application;
+use UzDevid\Yii\Runner\RoadRunner\Centrifugo\Tests\Support\Centrifugo\ConnectService;
+use UzDevid\Yii\Runner\RoadRunner\Centrifugo\Tests\Support\Centrifugo\SubscribeService;
 use Yiisoft\Test\Support\Log\SimpleLogger;
 
 return [
