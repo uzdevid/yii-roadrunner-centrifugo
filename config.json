@@ -1,0 +1,57 @@
+{
+  "log": {
+    "level": "debug"
+  },
+  "client": {
+    "token": {
+      "hmac_secret_key": "zBZwh_zo4x1IfqB-rz0DmVdTEPtlRl20eHY03XM2prkf4PRsfJ-WGeBWkFN6o8XKw636hcmLneeVoALr9ImDIg"
+    },
+    "allowed_origins": [
+      "*"
+    ],
+    "proxy": {
+      "connect": {
+        "enabled": true,
+        "endpoint": "grpc://127.0.0.1:30000",
+        "timeout": "10s"
+      },
+      "refresh": {
+        "enabled": true,
+        "endpoint": "grpc://127.0.0.1:30000",
+        "timeout": "3s"
+      }
+    }
+  },
+  "channel": {
+    "namespaces": [
+      {
+        "name": "news",
+        "allow_subscribe_for_client": true,
+        "subscribe_proxy_enabled": true
+      }
+    ],
+    "proxy": {
+      "subscribe": {
+        "endpoint": "grpc://127.0.0.1:30000",
+        "timeout": "3s"
+      },
+      "publish": {
+        "endpoint": "grpc://127.0.0.1:30000",
+        "timeout": "3s"
+      },
+      "sub_refresh": {
+        "endpoint": "grpc://127.0.0.1:30000",
+        "timeout": "3s"
+      }
+    }
+  },
+  "admin": {
+    "enabled": false,
+    "password": "eN4vtGcaEMDm7ETEiLZqJg",
+    "secret": "3z43arLJGRJUrtE1hw2p6wX6Mu6RLz-ZcGzatz0wlZ7NuXughVLCf0TMVJ_HJrirTNjKS73Qcqhe45zGsmMzpA"
+  },
+  "grpc_api": {
+    "address": "127.0.0.1",
+    "port": 30000
+  }
+}
