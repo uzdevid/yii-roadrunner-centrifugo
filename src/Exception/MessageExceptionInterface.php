@@ -4,10 +4,4 @@ namespace UzDevid\Yii\Runner\Centrifugo\Exception;
 
 use Throwable;
 
-interface MessageExceptionInterface extends Throwable {
-    /**
-     * @inheritDoc
-     * @psalm-external-mutation-free
-     */
-    public function getCode(): int;
-}
+interface MessageExceptionInterface extends Throwable { }

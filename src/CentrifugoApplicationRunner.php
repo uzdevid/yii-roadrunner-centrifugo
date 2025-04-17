@@ -183,7 +183,7 @@ class CentrifugoApplicationRunner extends ApplicationRunner {
                 $service->handle($request);
             } catch (MessageExceptionInterface $e) {
                 $errorHandler->handle($e);
-                $request->error($e->getCode(), $e->getMessage());
+                $request->error((int) $e->getCode(), $e->getMessage());
             }
 
             $this->afterRespond($container);
