@@ -27,7 +27,9 @@
       {
         "name": "news",
         "allow_subscribe_for_client": true,
-        "subscribe_proxy_enabled": true
+        "allow_publish_for_client": true,
+        "subscribe_proxy_enabled": true,
+        "publish_proxy_enabled": true
       }
     ],
     "proxy": {
@@ -46,7 +48,7 @@
     }
   },
   "admin": {
-    "enabled": false,
+    "enabled": true,
     "password": "eN4vtGcaEMDm7ETEiLZqJg",
     "secret": "3z43arLJGRJUrtE1hw2p6wX6Mu6RLz-ZcGzatz0wlZ7NuXughVLCf0TMVJ_HJrirTNjKS73Qcqhe45zGsmMzpA"
   },
