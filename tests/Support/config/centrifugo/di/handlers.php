@@ -1,6 +1,5 @@
 <?php declare(strict_types=1);
 
-
 use UzDevid\Yii\Runner\Centrifugo\Handler\ConnectHandlerInterface;
 use UzDevid\Yii\Runner\Centrifugo\Handler\InvalidRequestHandlerInterface;
 use UzDevid\Yii\Runner\Centrifugo\Handler\PublishHandlerInterface;
