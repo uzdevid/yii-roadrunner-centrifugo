@@ -1,5 +1,5 @@
 {
-    "name": "uzdevid/yii-centrifugo",
+    "name": "uzdevid/yii-runner-centrifugo",
     "type": "library",
     "description": "Centrifugo & RoadRunner based Yii runner",
     "keywords": [
